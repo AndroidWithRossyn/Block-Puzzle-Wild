@@ -1,0 +1,49 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion '31.0.0'
+
+    defaultConfig {
+        applicationId 'com.jacob.newgame'
+        minSdkVersion 19
+        targetSdkVersion 30
+        versionCode 1
+        versionName '1.0.0'
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dependenciesInfo {
+        includeInApk true
+        includeInBundle true
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.4.0-beta01'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'com.google.android.gms:play-services-ads:20.4.0'
+    implementation 'androidx.core:core:1.7.0-beta02'
+    implementation 'com.google.android.ads.consent:consent-library:1.0.8'
+}
